@@ -1,0 +1,45 @@
+/**Creating a sample store for khan acamedy project and deep diving into the total sales by each category **/
+
+/**Naming the table and adding respective fields **/
+
+CREATE TABLE FabbysWay (ItemKey INTEGER Primary Key, Item_Name TEXT, Category TEXT, Price INTEGER, UnitsSold INTEGER);
+
+/** Adding data to the store **/
+
+INSERT INTO FabbysWay VALUES 
+(1, 'Heart Cup', 'Cups', 16, 100);
+INSERT INTO FabbysWay VALUES 
+(2, 'Halloween Cup', 'Cups', 20, 50);
+INSERT INTO FabbysWay VALUES 
+(3, 'Christmas Cup', 'Cups', 20, 50);
+INSERT INTO FabbysWay VALUES 
+(4, 'Princess Cup', 'Cups', 15, 20);
+INSERT INTO FabbysWay VALUES 
+(5, 'Personalized Cup', 'Cups', 25, 100);
+INSERT INTO FabbysWay VALUES 
+(6, 'College Sweater', 'Apparel', 50, 100);
+INSERT INTO FabbysWay VALUES 
+(7, 'Band T-Shirt', 'Apparel', 30, 100);
+INSERT INTO FabbysWay VALUES 
+(8, 'Customized T-Shirt', 'Apparel', 35, 50);
+INSERT INTO FabbysWay VALUES 
+(9, 'Heart Necklace', 'Jewelry', 16, 100);
+INSERT INTO FabbysWay VALUES 
+(10, 'Heart Ring', 'Jewelry', 20, 100);
+INSERT INTO FabbysWay VALUES 
+(11, 'Pink Phone Case', 'Cases', 15, 200);
+INSERT INTO FabbysWay VALUES 
+(12, 'Purple Phone Case', 'Cases', 15, 150);
+INSERT INTO FabbysWay VALUES 
+(13, 'Pink Makeup Bag', 'Accessories', 10, 100);
+INSERT INTO FabbysWay VALUES 
+(14, 'Black Scarf', 'Accessories', 20, 80);
+INSERT INTO FabbysWay VALUES 
+(15, 'Pink Lap Case', 'Cases', 25, 100);
+
+SELECT * FROM Fabbysway Order by Category;
+
+SELECT Category,
+SUM(UnitsSold * Price) as TotalSold
+FROM FabbysWay
+GROUP BY Category;
